@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    /* Layout de Archivos */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* Configuración de Entorno y Módulos */
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "types": ["node"],
+
+    /* Salidas de Compilación */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* Verificación Estricta de Tipos */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+
+    /* Interoperabilidad y Compatibilidad */
+    "esModuleInterop": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"]
+}}
