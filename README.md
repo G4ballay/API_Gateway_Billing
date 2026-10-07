@@ -48,3 +48,51 @@ El servidor se compone de dos zonas operativas claramente separadas:
                                                             |
                                                             v
                                                   [ Servicio Destino ]
+```
+
+---
+
+## 💻 Instalación y Configuración Local
+
+### Prerrequisitos
+- Docker & Docker Compose
+- Node.js (v20+)
+
+### 1. Clonar el repositorio y levantar servicios
+```Bash
+git clone https://github.com/G4ballay/api-gateway-billing.git
+cd api-gateway-billing
+
+#Iniciar MongoDB y Redis en contenedores
+docker compose up -d
+```
+### 2. Configurar y levantar el Backend
+```Bash
+cd backend
+npm install
+cp .env.example .env
+#Configurar parametros en .env
+npm run dev
+```
+### 3. Configurar y levantar el Frontend
+```Bash
+cd ../frontend
+npm install
+npm run dev
+```
+---
+
+## 📂 Estructura del Monorepo
+```text
+api-gateway-billing/
+├── backend/
+│   ├── src/
+│   │   ├── controllers/   # Controladores para Auth, Keys y Pagos
+│   │   ├── middlewares/   # Middleware del Gateway & Validación
+│   │   ├── models/        # Esquemas de Mongoose (User, ApiKey, Transaction)
+│   │   ├── routes/        # Definición de endpoints HTTP
+│   │   └── utils/         # Helpers de JWT, Criptografía y Generadores
+│   └── tsconfig.json
+├── frontend/              # Panel de usuario en React
+└── docker-compose.yml     # Infraestructura para MongoDB y Redis
+```
